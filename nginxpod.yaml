@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mynginx
+  annotations:
+    city: portneuf
+  labels:
+    app: web
+    environment: production
+    tier: frontend
+spec:
+  containers:
+  - name: mynginx-con
+    image: nginx:1.20
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 80
